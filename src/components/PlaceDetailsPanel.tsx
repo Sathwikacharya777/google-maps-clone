@@ -115,8 +115,6 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
           <>
             <ActionButtons />
             <div className={styles.divider} />
-            
-            {/* New Detail Rows like Screenshot 2 */}
             <div className={styles.infoRows}>
                 <div className={styles.infoRow}>
                     <MapPin size={20} className={styles.infoIcon} />
@@ -135,7 +133,6 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
                     <span className={styles.infoLink}>Add a label</span>
                 </div>
             </div>
-
             <div className={styles.divider} />
             <FeaturesRow features={place.features} />
             <OverviewSection place={place} />
@@ -149,12 +146,12 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
   };
 
   return (
-    <div className={styles.panelWrapper}>
-      {/* SIDEBAR */}
+    /* Apply collapsed class to the wrapper so sidebar and panel move together */
+    <div className={`${styles.panelWrapper} ${isCollapsed ? styles.collapsed : ''}`}>
       {!isMobile && (
         <aside className={styles.leftRail}>
           <div className={styles.topIcons}>
-            <Menu size={24} color="#5f6368" className={styles.menuIcon} />
+            <Menu size={24} color="#5f6368" />
             <div className={styles.railItem}>
               <Bookmark size={22} color="#5f6368" />
               <span className={styles.railLabel}>Saved</span>
@@ -164,7 +161,6 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
               <span className={styles.railLabel}>Recents</span>
             </div>
           </div>
-          
           <div className={styles.bottomIcons}>
             <div className={styles.miniThumb}>
               <img src={place.images[0]} alt="mini" />
@@ -177,18 +173,16 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
         </aside>
       )}
 
-      {/* MAIN PANEL */}
       <div 
         id="details-panel"
-        className={`${styles.panelContainer} ${isCollapsed ? styles.collapsed : ''}`}
+        className={styles.panelContainer}
         style={{ 
           height: isMobile ? `${sheetHeight}px` : '100vh',
-          transition: isDragging ? 'none' : 'transform 0.3s ease-out, height 0.3s ease-out'
+          transition: isDragging ? 'none' : 'height 0.3s ease-out'
         }}
       >
         <div className={styles.mobileDragHandle} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd} />
 
-        {/* Floating Search Bar Section (New) */}
         <div className={styles.searchBarWrapper}>
             <div className={styles.searchBar}>
                 <button className={styles.searchIconBtn}><Search size={20} color="#5f6368"/></button>
@@ -209,7 +203,6 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
             </div>
         </div>
 
-        {/* Desktop Collapse Arrow */}
         {!isMobile && (
             <button 
                 className={`${styles.collapseToggle} ${isCollapsed ? styles.isCollapsedBtn : ''}`}
