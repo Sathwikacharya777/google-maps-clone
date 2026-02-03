@@ -1,0 +1,214 @@
+.mainWrapper {
+  position: absolute;
+  top: 12px;
+  
+  /* CHANGE THIS VALUE */
+  /* Sidebar (64px) + Panel (396px) + 20px Gap = 480px */
+  left: 480px; 
+  
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5; /* Keep it below the details panel but above the map */
+  pointer-events: none;
+}
+
+/* Category Buttons Section */
+.categoriesContainer {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  pointer-events: auto;
+  padding-bottom: 4px;
+  margine-left: 20px;
+}
+
+.categoriesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.categoryButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 8px 14px;
+  border-radius: 32px;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.categoryButton:hover {
+  background-color: #f1f3f4;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+/* User Controls Section */
+.userControls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  pointer-events: auto;
+  position: relative; /* Anchor for dropdown */
+}
+
+.dotsIcon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  opacity: 0.9;
+  filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.6)); /* Critical for white icons on light maps */
+}
+
+.dotsIcon:hover {
+  opacity: 1;
+}
+
+.profileCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #8d6e63;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* APPS DROPDOWN (Dark Theme) */
+.appsDropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 330px;
+  background-color: #1f1f1f; /* Dark color from your screenshot */
+  border-radius: 28px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px 18px 12px;
+}
+
+.headerTitle {
+  color: #e8eaed;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.editBtn {
+  width: 36px;
+  height: 36px;
+  background-color: #3c4043;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.appsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.appsGrid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.appsGrid::-webkit-scrollbar-thumb {
+  background: #5f6368;
+  border-radius: 10px;
+}
+
+.appItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 4px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.appItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.appIconWrapper {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.appIconImg {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.appProfileCircle {
+  width: 40px;
+  height: 40px;
+  background-color: #8d6e63;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.appName {
+  color: #e8eaed;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Responsive - Adjust positions for Mobile */
+@media (max-width: 768px) {
+  .mainWrapper {
+    left: 12px;
+  }
+  
+  .appsDropdown {
+    width: 280px;
+    right: 0;
+  }
+  
+  .categoriesContainer {
+    max-width: calc(100vw - 120px);
+  }
+}

@@ -1,0 +1,109 @@
+.container {
+    padding: 16px 24px;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.summaryContainer {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.barsColumn {
+    flex: 1;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.starLabel {
+    font-size: 12px;
+    width: 12px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+}
+
+.barTrack {
+    flex: 1;
+    height: 8px;
+    background-color: #f1f3f4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.scoreColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+}
+
+.bigScore {
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.starsRow {
+    display: flex;
+    margin: 4px 0;
+}
+
+.totalReviews {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.highlightItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.highlightText {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 20px;
+}
+
+.writeButtonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.writeButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e2f7f9;
+    color: #00707c;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 14px;
+}

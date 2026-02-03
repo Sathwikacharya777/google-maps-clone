@@ -1,0 +1,201 @@
+.container {
+    padding-bottom: 24px;
+}
+
+.summaryContainer {
+    display: flex;
+    padding: 16px 24px;
+    gap: 24px;
+}
+
+.barsColumn {
+    flex: 1;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.starLabel {
+    font-size: 12px;
+    width: 12px;
+    margin-right: 8px;
+    color: var(--text-secondary);
+}
+
+.barTrack {
+    flex: 1;
+    height: 8px;
+    background-color: #f1f3f4;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 4px;
+    background-color: #fbbc04;
+    /* Default yellow */
+}
+
+.scoreColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+}
+
+.bigScore {
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.starsRow {
+    display: flex;
+    margin: 4px 0;
+}
+
+.totalReviews {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.writeReviewContainer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.writeButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e2f7f9;
+    /* Light cyan from image */
+    color: #00707c;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.filtersRow {
+    display: flex;
+    padding: 12px 24px;
+    gap: 8px;
+    align-items: center;
+}
+
+.iconButton {
+    width: 40px;
+    height: 32px;
+    /* Pill shapeish */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    /* background-color: #f1f3f4; */
+    /* Sometimes transparent */
+    color: var(--text-color);
+}
+
+.chipsRow {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 24px 12px 24px;
+    gap: 8px;
+    scrollbar-width: none;
+}
+
+.chip {
+    padding: 6px 12px;
+    border-radius: 8px;
+    /* Slightly squarish as per image */
+    border: 1px solid #dadce0;
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+.activeChip {
+    background-color: #e2f7f9;
+    /* Selected style */
+    border-color: transparent;
+    color: #004d40;
+}
+
+.reviewList {
+    padding: 0 24px;
+}
+
+.reviewItem {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.reviewHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.userInfo {
+    flex: 1;
+}
+
+.userName {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.userStats {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.moreButton {
+    color: var(--text-secondary);
+}
+
+.reviewRatingRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.reviewStars {
+    display: flex;
+}
+
+.reviewTime {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.reviewText {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-color);
+}
+
+.moreLink {
+    color: var(--text-secondary);
+    /* Usually styled differently or clickable */
+    font-weight: 500;
+    cursor: pointer;
+}

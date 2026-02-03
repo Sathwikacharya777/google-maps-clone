@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './OverviewSection.module.css';
 import { PlaceData } from '@/data/placeData';
-import { MapPin, Phone, Globe } from 'lucide-react';
+import { MapPin, Phone, Globe, ShieldCheck, History, Tag } from 'lucide-react';
 
 interface OverviewSectionProps {
     place: PlaceData;
@@ -30,6 +30,22 @@ export default function OverviewSection({ place }: OverviewSectionProps) {
                     <div className={styles.text}>{place.website}</div>
                 </div>
             )}
+
+            {/* New Rows */}
+            <div className={styles.row}>
+                <ShieldCheck size={24} className={styles.icon} color="#202124" />
+                <div className={styles.text}>Claim this business</div>
+            </div>
+
+            <div className={styles.row}>
+                <History size={24} className={styles.icon} color="#202124" />
+                <div className={styles.text}>Your Maps activity</div>
+            </div>
+
+            <div className={styles.row}>
+                <Tag size={24} className={styles.icon} color="#202124" />
+                <div className={styles.text}>Add a label</div>
+            </div>
         </div>
     );
 }

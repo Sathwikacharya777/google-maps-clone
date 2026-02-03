@@ -1,63 +1,202 @@
+/* Container to hold Sidebar + Panel */
+.panelWrapper {
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none; /* Allow clicking map through empty space */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.leftRail {
+  width: 64px;
+  background-color: white;
+  height: 100vh;
+  border-right: 1px solid #e8eaed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0 20px 0;
+  flex-shrink: 0;
+  pointer-events: auto; /* Re-enable clicks for sidebar */
+}
+
+.topIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.bottomIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.railItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.railLabel {
+  font-size: 11px;
+  color: #3c4043;
+}
+
+.miniThumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #dadce0;
+}
+
+.miniThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Panel Styles */
 .panelContainer {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    bottom: 0px;
-    width: var(--panel-width);
+  width: 400px;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Anchor for the arrow button */
+  pointer-events: auto; /* Re-enable clicks for panel */
+}
+
+.collapsed {
+  transform: translateX(-464px); 
+}
+
+/* Search Bar (Floating at top of panel) */
+.searchBarWrapper {
+    padding: 8px;
     background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 24px;
+    padding: 2px 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+    height: 48px;
+}
+
+.searchBar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 8px;
+    color: #202124;
+}
+
+.searchIconBtn, .closeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+/* Panel Content Body */
+.panelBody {
+    flex: 1;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
-    /* Only top on desktop usually, but let's do all for floating look? No, standard is sidebar. */
-    border-radius: 8px;
-    max-height: calc(100vh - 20px);
 }
 
 .scrollContent {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-bottom: 20px;
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px;
 }
 
-.loadingContainer {
+/* Info Rows (Address, Claim, etc) */
+.infoRows {
+    padding: 8px 16px;
+}
+
+.infoRow {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    padding: 12px 0;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.infoIcon {
+    color: #1a73e8;
+    flex-shrink: 0;
+}
+
+.infoText {
+    font-size: 14px;
+    color: #3c4043;
+}
+
+.infoLink {
+    font-size: 14px;
+    color: #1a73e8;
+}
+
+/* Collapse Arrow Button */
+.collapseToggle {
+  position: absolute;
+  top: 50%;
+  /* Move it to the very right edge of the panel (400px from panel start) */
+  right: -24px; 
+  transform: translateY(-50%);
+  width: 24px;
+  height: 48px;
+  background-color: white;
+  border: 1px solid #dadce0;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.1);
+  z-index: 110;
+}
+
+.isCollapsedBtn {
+  right: -24px !important;
+  transform: translateY(-50%) rotate(0deg);
 }
 
 .divider {
-    height: 1px;
-    background-color: var(--divider-color);
-    margin: 16px 0;
+  height: 1px;
+  background-color: #e8eaed;
+  margin: 8px 0;
 }
 
-.footerSection {
-    padding: 0 24px;
-}
-
-.footerText {
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-/* Mobile Responsive - Bottom Sheet */
 @media (max-width: 600px) {
-    .panelContainer {
-        top: auto;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 60vh;
-        /* Initial height */
-        max-height: 90vh;
-        border-radius: 16px 16px 0 0;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-        transform: translateY(0);
-        transition: transform 0.3s ease-in-out;
-    }
+  .panelWrapper { width: 100%; }
+  .panelContainer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-radius: 16px 16px 0 0;
+    transform: none !important;
+  }
+  .searchBarWrapper { display: none; } /* Usually hidden on mobile bottom sheet */
 }

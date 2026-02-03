@@ -2,12 +2,13 @@
 
 import React from 'react';
 import styles from './ActionButtons.module.css';
-import { Navigation, Bookmark, Share2, Smartphone } from 'lucide-react';
+import { Navigation, Bookmark, Share2, Smartphone, MapPin } from 'lucide-react'; // MapPin can act as "Nearby"
 
 export default function ActionButtons() {
     const actions = [
         { label: 'Directions', icon: Navigation, active: true },
         { label: 'Save', icon: Bookmark, active: false },
+        { label: 'Nearby', icon: MapPin, active: false }, // New
         { label: 'Send to phone', icon: Smartphone, active: false },
         { label: 'Share', icon: Share2, active: false },
     ];

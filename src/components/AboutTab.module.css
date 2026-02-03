@@ -1,0 +1,62 @@
+.container {
+  padding-bottom: 24px;
+}
+
+.section {
+  padding: 16px 24px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 12px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.checkIcon {
+  color: var(--text-color);
+  margin-right: 12px;
+  flex-shrink: 0;
+  stroke-width: 2.5; 
+  width: 16px;
+  height: 16px;
+}
+
+.banIcon {
+  color: var(--text-secondary);
+  margin-right: 12px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--divider-color);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    column-gap: 0;
+  }
+}

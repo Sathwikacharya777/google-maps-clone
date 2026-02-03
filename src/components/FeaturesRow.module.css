@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--divider-color);
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: var(--hover-color);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 4px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+}
+
+.checkIcon {
+    color: #188038;
+    /* Google Green */
+    margin-right: 4px;
+}
+
+.featureText {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.dot {
+    margin: 0 8px;
+    color: var(--text-secondary);
+}
+
+.chevron {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    margin-left: 16px;
+}
