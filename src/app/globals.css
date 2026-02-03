@@ -1,0 +1,57 @@
+:root {
+  --primary-color: #1a73e8;
+  --text-color: #202124;
+  --text-secondary: #5f6368;
+  --background-color: #ffffff;
+  --divider-color: #e8eaed;
+  --hover-color: #f1f3f4;
+  --font-family: 'Roboto', 'Inter', sans-serif;
+  --panel-width: 400px; /* Standard sidebar width */
+  --shadow-elevation: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0px rgba(0,0,0,0.02);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: #f8f9fa; /* Map background color placeholder */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Scrollbar styling for panel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdc1c6;
+}

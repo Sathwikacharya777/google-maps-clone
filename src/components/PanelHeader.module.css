@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* Hero image height */
+    overflow: hidden;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+    background-color: #f1f3f4;
+}
+
+.titleSection {
+    padding: 16px 24px 0 24px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.ratingRow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.rating {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+}
+
+.reviewCount {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.categoryRow {
+    font-size: 14px;
+    color: var(--text-secondary);
+}

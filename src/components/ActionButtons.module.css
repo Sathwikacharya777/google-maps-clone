@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    /* Distribute evenly */
+    padding: 12px 0;
+    border-bottom: 1px solid var(--divider-color);
+    margin: 0 16px;
+}
+
+.actionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 70px;
+}
+
+.iconCircle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #dadce0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.iconCircle:hover {
+    background-color: #f1f3f4;
+}
+
+.iconCircle.active {
+    background-color: #e8f0fe;
+    /* Light blue accent */
+    border: none;
+}
+
+.label {
+    font-size: 12px;
+    color: #1a73e8;
+    font-weight: 500;
+    text-align: center;
+}
