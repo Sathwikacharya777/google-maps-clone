@@ -6,17 +6,9 @@ import { PlaceData } from '@/data/placeData';
 import PanelHeader from './PanelHeader';
 import Spinner from './Spinner';
 import { 
-  Menu, 
-  ChevronLeft, 
-  ChevronRight, 
-  Bookmark, 
-  History, 
-  Smartphone, 
-  Search, 
-  X,
-  MapPin,
-  ShieldCheck,
-  Tag
+  Menu, ChevronLeft, ChevronRight, Bookmark, 
+  History, Smartphone, Search, X, Star, MapPin, 
+  ShieldCheck, RotateCcw, Tag 
 } from 'lucide-react';
 
 // Tab Components
@@ -175,7 +167,7 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
           
           <div className={styles.bottomIcons}>
             <div className={styles.miniThumb}>
-              <img src={place.image} alt="" />
+              <img src={place.images[0]} alt="mini" />
             </div>
             <div className={styles.railItem}>
               <Smartphone size={20} color="#5f6368" />
