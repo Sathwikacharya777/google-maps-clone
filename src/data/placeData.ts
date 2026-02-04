@@ -90,16 +90,37 @@ export const PLACE_DATA: PlaceData = {
     pricePerPerson: "₹1–200 per person",
 
     menuImages: [
-        "https://images.unsplash.com/photo-1574155376612-dd510940cc8b?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80",
         "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=400&q=80",
-        "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80",
     ],
 
     highlights: [
-        { id: "1", name: "Tripple Fried Rice Combo", image: "https://images.unsplash.com/photo-1603133872878-684f10830303?auto=format&fit=crop&w=400&q=80", popular: false, price: "Combo" },
+        { id: "1", name: "Tripple Fried Rice Combo", image: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=400&q=80", popular: false, price: "Combo" },
         { id: "2", name: "Chicken Fried Rice", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&q=80", popular: true },
         { id: "3", name: "Chicken Manchow", image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=400&q=80", popular: false },
         { id: "4", name: "Gadbad Ice Cream", image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80", popular: false },
+        { 
+    id: "5", 
+    name: "Paneer Tikka Masala", 
+    image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=400&q=80", 
+    popular: true 
+},
+{ 
+    id: "6", 
+    name: "Tandoori Chicken Platter", 
+    image: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=400&q=80", 
+    popular: false 
+},
+{ 
+    id: "7", 
+    name: "Mango Thick Shake", 
+    image: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=400&q=80", 
+    popular: false 
+},
     ],
 
     reviews: [
@@ -121,6 +142,26 @@ export const PLACE_DATA: PlaceData = {
             time: "1 month ago",
             text: "Great food for the price!",
             stats: "15 reviews"
+        },
+        {
+            id: "3",
+            user: "Priyanka Sharma",
+            userImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80",
+            stats: "Local Guide · 52 reviews · 12 photos",
+            rating: 5,
+            time: "2 weeks ago",
+            text: "The Masala Dosa and filter coffee are a must-try here. Very authentic taste and the chutney is fresh. It gets quite crowded during weekend mornings, but the service is surprisingly quick. Great value for money!",
+            tags: ["Dine-in", "Breakfast", "₹1–200"],
+        },
+        {
+            id: "4",
+            user: "Rahul Verma",
+            userImage: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80",
+            stats: "45 reviews",
+            rating: 4,
+            time: "5 months ago",
+            text: "Good spot for a quick bite. Tried the Gobi Manchurian and it was perfectly crispy. The seating area is a bit small and can feel cramped during peak hours, but the cleanliness is maintained well. Decent parking space available too.",
+            tags: ["Takeout", "Dinner", "₹1–200"],
         }
     ],
 
