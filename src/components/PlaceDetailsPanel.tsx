@@ -197,9 +197,15 @@ const PlaceDetailsPanel: React.FC<PlaceDetailsPanelProps> = ({
         </div>
 
         <div className={styles.panelBody}>
-            <PanelHeader place={place} activeTab={activeTab} onTabChange={setActiveTab} />
             <div className={styles.scrollContent}>
-              {renderContent()}
+                {/* MOVED INSIDE SCROLL CONTENT */}
+                <PanelHeader 
+                    place={place} 
+                    activeTab={activeTab} 
+                    onTabChange={setActiveTab} 
+                />
+                
+                {renderContent()}
             </div>
         </div>
 
