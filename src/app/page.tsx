@@ -5,9 +5,9 @@ import styles from './page.module.css';
 import PlaceDetailsPanel from '@/components/PlaceDetailsPanel';
 import MapToolbar from '@/components/MapToolbar';
 import { PLACE_DATA } from '@/data/placeData';
+import Link from 'next/link'; // Import Link
 
 export default function Home() {
-  // State lifted to the parent so both Toolbar and Panel can react to it
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
@@ -17,12 +17,28 @@ export default function Home() {
         <img src="/map.png" alt="Map" className={styles.mapImage} />
       </div>
 
-      {/* 2. Top Toolbar (Category buttons + 9 Dots) */}
-      {/* It will hide itself if isCollapsed is true */}
+      {/* Floating Product Link (Added this) */}
+      <Link 
+        href="/product" 
+        style={{
+          position: 'fixed',
+          top: '80px', // Below your toolbar
+          right: '20px',
+          zIndex: 1000,
+          backgroundColor: '#1a73e8',
+          color: 'white',
+          padding: '10px 20px',
+          borderRadius: '24px',
+          textDecoration: 'none',
+          fontWeight: '500',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+        }}
+      >
+        View Products
+      </Link>
+
       <MapToolbar isCollapsed={isCollapsed} />
 
-      {/* 3. Place Details Panel (Sidebar / Bottom Sheet) */}
-      {/* It controls the slide animation and the arrow button */}
       <PlaceDetailsPanel 
         place={PLACE_DATA} 
         isCollapsed={isCollapsed} 
